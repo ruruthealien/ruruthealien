@@ -1,0 +1,30 @@
+#include<stdio.h>
+void main()
+{
+    int n, temp, rem, rev=0;
+    printf("enter the number:");
+    scanf("%d",&n);
+   
+    //armstrong number
+    temp=n;
+   while (temp!=0)
+   {
+    int mul =1;
+    rem = temp%10;
+    rev = rev*10 +rem;
+    temp = temp/10;
+   }
+   
+    printf("value of rev is %d",rev);
+    if (n==rev)
+    {
+        printf("\n%d is an Palindrome Number",n);
+    }
+    else
+    printf("\n%d is not an Palindrome Number",n);
+
+}
+
+//enter the number:151
+//value of arm is 151
+//151 is an Palindrome Number
