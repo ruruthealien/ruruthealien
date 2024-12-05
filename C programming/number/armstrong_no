@@ -1,0 +1,45 @@
+#include<stdio.h>
+void main()
+{
+    int n, temp, count=0, rem, arm=0;
+    printf("enter the number:");
+    scanf("%d",&n);
+
+    temp=n;
+    //counting digits
+   while (temp !=0)
+   {
+        count++;
+        temp = temp/10;
+
+   }
+   
+    //armstrong number
+    temp=n;
+   while (temp!=0)
+   {
+    int mul =1;
+    rem = temp%10;
+
+    for (int i = 1; i <= count; i++)
+    {
+        mul *=rem;
+    }
+
+    arm = arm +mul;
+    temp = temp/10;
+   }
+   
+    printf("value of arm is %d",arm);
+    if (n==arm)
+    {
+        printf("\n%d is an Armstrong Number",n);
+    }
+    else
+    printf("\n%d is not an Armstrong Number",n);
+
+}
+
+//enter the number:153
+//value of arm is 153
+//153 is an Armstrong Number
