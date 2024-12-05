@@ -1,0 +1,50 @@
+#include<stdio.h>
+void main()
+{
+    int n, rem;
+    printf("enter the limit:");
+    scanf("%d",&n);
+    int arr[n];
+
+    //entering values in the array
+    for (int i = 0; i < n; i++)
+    {
+        printf("\narr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    //checking for neon number in the array
+    for (int i = 0; i < n; i++)
+    {
+        int sq=1, neo=0;
+        sq = arr[i] * arr[i];
+
+        //checking neo or not
+        while (sq !=0)
+        {
+            rem = sq % 10;
+            neo = neo + rem;
+            sq = sq /10;
+        }
+        if(neo==9)
+        {
+            printf("\n%d is an Neon Number",arr[i]);
+        }
+    } 
+}
+
+
+
+//enter the limit:5
+//arr[0]: 1
+
+//arr[1]: 3
+
+//arr[2]: 5
+
+//arr[3]: 7
+
+//arr[4]: 9
+
+//3 is an Neon Number
+//9 is an Neon Number
