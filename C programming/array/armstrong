@@ -1,0 +1,66 @@
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("enter the limit:");
+    scanf("%d",&n);
+    int arr[n];
+
+    //entering values in the array
+    for (int i = 0; i < n; i++)
+    {
+        printf("\narr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    //checking for armstrong number in the array
+    for (int i = 0; i < n; i++)
+    {
+        int temp1= arr[i];
+        int count=0, rem=1, mul=1, arm=0;
+
+        //counting number
+        while (temp1 !=0)
+        {
+            count++;
+            temp1 = temp1/10;
+        }
+        temp1 = arr[i];
+        //checking armstrong or not
+        while (temp1 !=0)
+        {
+            rem = temp1%10;
+            for (int i = 0; i < count; i++)
+            {
+                mul *=rem;
+            }
+            arm = arm + mul;
+            temp1 = temp1/10;
+        }
+        if(arr[i]==arm)
+        {
+            printf("%d is an Armstrong Number",arr[i]);
+        }
+    } 
+}
+
+
+
+//enter the limit:6
+
+//arr[0]: 7
+
+//arr[1]: 153
+
+//arr[2]: 85
+
+//arr[3]: 9474
+
+//arr[4]: 407
+
+//arr[5]: 265
+
+//7 is an Armstrong Number
+//153 is an Armstrong Number
+//9474 is an Armstrong Number
+//407 is an Armstrong Number
