@@ -1,0 +1,51 @@
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("enter the limit:");
+    scanf("%d",&n);
+    int arr[n];
+
+    //entering values in the array
+    for (int i = 0; i < n; i++)
+    {
+        printf("\narr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    //checking for palindrome number in the array
+    for (int i = 0; i < n; i++)
+    {
+        int temp1= arr[i];
+        int count=0, rev=0;
+
+        //checking palindrome or not
+        while (temp1 !=0)
+        {
+            int mul =1, rem=1;
+            rem = temp1%10;
+            rev = rev*10 + rem;
+            temp1 = temp1/10;
+        }
+        if(arr[i]==rev)
+        {
+            printf("\n%d is an Palindrome Number",arr[i]);
+        }
+    } 
+}
+
+
+//enter the limit:5
+
+//arr[0]: 14
+
+//arr[1]: 5
+
+//arr[2]: 222
+
+//arr[3]: 985
+
+//arr[4]: 365
+
+//5 is an Palindrome Number
+//222 is an Palindrome Number
