@@ -1,0 +1,28 @@
+#include<stdio.h>
+void main()
+{
+    int num, rem, sq, neo=0;
+    printf("enter the number: ");
+    scanf("%d",&num);
+
+    sq = num * num;
+    while (sq!=0)
+    {
+        rem = sq % 10;
+        neo = neo + rem;
+        sq = sq / 10;
+    }
+        
+    
+    printf("value of neo: %d",neo);
+    if (neo==9)
+    {
+        printf("\n%d is a Neon Number",num);
+    }
+    else
+    printf("\n%d is not a Neon Number",num);
+}
+
+//enter the number: 6
+//value of neo: 9
+//6 is a Neon Number
