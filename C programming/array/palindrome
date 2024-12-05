@@ -17,12 +17,12 @@ void main()
     for (int i = 0; i < n; i++)
     {
         int temp1= arr[i];
-        int count=0, rev=0;
+        int rev=0;
 
         //checking palindrome or not
         while (temp1 !=0)
         {
-            int mul =1, rem=1;
+            int rem=1;
             rem = temp1%10;
             rev = rev*10 + rem;
             temp1 = temp1/10;
