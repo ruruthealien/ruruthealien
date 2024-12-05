@@ -1,0 +1,52 @@
+#include<stdio.h>
+void main()
+{
+    int n, rem=1;
+    printf("enter the limit:");
+    scanf("%d",&n);
+    int arr[n];
+
+    //entering values in the array
+    for (int i = 0; i < n; i++)
+    {
+        printf("\narr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    //checking for krishnamurthy number in the array
+    for (int i = 0; i < n; i++)
+    {
+        int temp1= arr[i];
+        int kn =0;
+
+        //checking krishnamurthy or not
+        while (temp1 !=0)
+        {
+            int fact = 1;
+            rem = temp1%10;
+            for (int j = 1; j <= rem; j++)
+            {
+                fact= fact*j;
+            }
+            kn = kn + fact;
+            temp1 = temp1/10;
+        }
+        if(arr[i]==kn)
+        {
+            printf("\n%d is an Krishnamurthy Number",arr[i]);
+        }
+    } 
+}
+
+
+
+//enter the limit:4
+//arr[0]: 145
+
+//arr[1]: 658
+
+//arr[2]: 124
+
+//arr[3]: 111
+
+//145 is an Krishnamurthy Number
