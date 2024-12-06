@@ -1,0 +1,54 @@
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("enter the limit:");
+    scanf("%d",&n);
+    int arr[n];
+
+    //entering values in the array
+    for (int i = 0; i < n; i++)
+    {
+        printf("\narr[%d]: ",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    //checking for neon number in the array
+    for (int i = 0; i < n; i++)
+    {
+        int sq=1, neo=0, temp = arr[i], rem = 1, mul = 1, count =0;
+        sq = arr[i] * arr[i];
+        
+        //checking neo or not
+        while (temp !=0)
+        {
+            count++;
+            temp = temp /10;
+        }
+        for (int i = 1; i <= count; i++)
+        {
+            mul = mul * 10;
+        }
+        rem = sq % mul;
+
+        if(rem==arr[i])
+        {
+            printf("\n%d is an Automorphic Number",arr[i]);
+        }
+    } 
+}
+
+
+
+//enter the limit: 4
+//arr[0]: 5
+
+//arr[1]: 6
+
+//arr[2]: 76
+
+//arr[3]: 85
+
+//5 is an Automorphic Number
+//6 is an Automorphic Number
+//76 is an Automorphic Number
