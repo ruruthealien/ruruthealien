@@ -1,0 +1,42 @@
+#include<stdio.h>
+void main()
+{
+    int num, rem, sq, mul=1;
+    printf("enter the number: ");
+    scanf("%d",&num);
+    int temp = num;
+    sq = num * num;
+    printf("\nThe square of %d is: %d",num,sq);
+   
+   //counting the no. of digits
+   int count=0;
+    while (temp !=0)
+    {
+        count++;
+        temp = temp / 10;
+    }
+    
+   //storing the last digits 
+    temp =num;
+
+    for (int i = 1; i <= count; i++)
+    {
+        mul = mul *10;
+    }
+    
+    rem = sq % mul;
+
+    printf("\nvalue of last digits: %d",rem);
+
+    if (rem==num)
+    {
+        printf("\n%d is a Automorphic Number",num);
+    }
+    else
+    printf("\n%d is not a Automorphic Number",num);
+}
+
+//enter the number: 376
+//The square of 376 is: 141376
+//value of last digits: 376
+//376 is a Automorphic Number
